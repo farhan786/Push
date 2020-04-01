@@ -1,0 +1,29 @@
+{
+    "server": {
+        "host": "0.0.0.0",
+        "port": 4001,
+        "name": "push",
+        "version": "1.0.0",
+        "api": {
+            "prefixes": {
+                "backend": "v1/backend",
+                "frontend": "v1"
+            }
+        }
+    },
+    "fastify": {
+        "log_level": 10
+    },
+    "jwt": {
+        "secret": "9e06765b-93bc-4e07-bc59-2e666a51bb0b"
+    },
+    "storage": {
+        "pgsql": {
+            "user": "postgres",
+            "password": "St@ndard10",
+            "host": "localhost",
+            "port": 5432,
+            "database": "push"
+        }
+    }
+}

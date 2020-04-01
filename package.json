@@ -1,0 +1,66 @@
+{
+    "name": "push",
+    "version": "1.0.0",
+    "description": "Backend for Push",
+    "main": "server.js",
+    "repository": {
+        "type": "git",
+        "url": "https://coderepo.its.com.pk/push.git"
+    },
+    "scripts": {
+        "push-local": "node server.js --env local | pino-pretty",
+        "push-devel": "node server.js --env development | pino-pretty",
+        "push-prod": "node server.js --env production | pino-pretty",
+        "push-debug": "node server.js --env debug | pino-pretty"
+    },
+    "lint-staged": {
+        "*.js": [
+            "eslint --no-ignore --fix",
+            "git add --force"
+        ],
+        "*.json": [
+            "prettier --write",
+            "git add --force"
+        ]
+    },
+    "jest": {
+        "setupFilesAfterEnv": [
+            "<rootDir>/src/utils/jest.setup.js"
+        ]
+    },
+    "license": "GPL-3.0",
+    "dependencies": {
+        "@hapi/boom": "^9.0.0",
+        "@hapi/joi": "^17.1.0",
+        "apns": "^0.1.0",
+        "aps": "0.0.2",
+        "awilix": "^4.2.5",
+        "bluebird": "^3.5.3",
+        "btoa": "^1.2.1",
+        "fastify": "^2.12.0",
+        "fastify-cors": "^2.1.3",
+        "fastify-file-upload": "^2.0.1",
+        "fastify-helmet": "^3.0.0",
+        "fastify-jwt": "^0.9.6",
+        "fastify-plugin": "^1.5.0",
+        "fluent-schema": "^0.7.0",
+        "lodash": "^4.17.11",
+        "nconf": "^0.10.0",
+        "node-gcm": "^1.0.2",
+        "pg-monitor": "^1.1.0",
+        "pg-promise": "^8.6.4",
+        "pgsql": "^1.0.0",
+        "pino": "^5.13.3",
+        "pino-pretty": "^3.6.1",
+        "request": "^2.88.0",
+        "request-promise": "^4.2.5",
+        "uuid": "^3.4.0"
+    },
+    "devDependencies": {
+        "eslint": "^5.16.0",
+        "eslint-config-airbnb-base": "^13.1.0",
+        "eslint-plugin-import": "^2.16.0",
+        "lint-staged": "^8.1.5"
+    },
+    "author": "amustafa"
+}
